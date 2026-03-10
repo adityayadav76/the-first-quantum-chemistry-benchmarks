@@ -16,7 +16,7 @@ TFQCB requires Python v3.11+ on Linux to run.
 Install dependencies:
 
 ```sh
-pip install qiskit==1.4.2 qrisp pyscf
+pip install qiskit==1.4.2 qrisp pyscf requests
 pip install openfermion
 pip install openfermionpyscf
 pip install scipy
