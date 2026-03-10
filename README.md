@@ -29,3 +29,18 @@ python <program-name>.py
 ```
 
 ## Results
+
+### vqe1.py
+
+![](https://raw.githubusercontent.com/adityayadav76/the-first-quantum-chemistry-benchmarks/refs/heads/main/Runs/vqe1-console.png)
+
+![](https://raw.githubusercontent.com/adityayadav76/the-first-quantum-chemistry-benchmarks/refs/heads/main/Runs/vqe1-plot.png)
+
+### vqe2.py
+
+![](https://raw.githubusercontent.com/adityayadav76/the-first-quantum-chemistry-benchmarks/refs/heads/main/Runs/vqe2-console.png)
+
+![](https://raw.githubusercontent.com/adityayadav76/the-first-quantum-chemistry-benchmarks/refs/heads/main/Runs/vqe2-plot.png)
+
+
+
