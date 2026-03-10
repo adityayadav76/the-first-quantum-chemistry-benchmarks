@@ -36,7 +36,6 @@ mol = gto.M(
 
 vqe = electronic_structure_problem(
     mol,
-    freeze_core=True,     # freeze deep orbitals
     active_orbitals=12    # 12 spatial orbitals → 24 qubits
 )
 
@@ -44,8 +43,7 @@ vqe = electronic_structure_problem(
 # 3. Define Quantum Register
 # ============================================================
 
-n_qubits = 24
-qv = QuantumVariable(n_qubits)
+qv = QuantumVariable(24)
 
 # ============================================================
 # 4. Optional: Connect Your Backend
@@ -58,8 +56,8 @@ from AutomatskiKomencoQiskit import AutomatskiKomencoQiskit
 from AutomatskiBackendQrisp import *
 
 backend = AutomatskiKomencoQiskit(
-    host="XXX.XXX.XXX.XXX",
-    port=XX
+    host="xxx.xxx.xxx.xxx",
+    port=xx
 )
 
 automatski_backend = AutomatskiBackend(backend=backend)
@@ -67,6 +65,7 @@ automatski_backend = AutomatskiBackend(backend=backend)
 # ============================================================
 # 5. Run VQE
 # ============================================================
+vqe.set_callback()
 
 energy = vqe.run(
     qv,
@@ -79,11 +78,4 @@ energy = vqe.run(
 
 print("Ground state energy:", energy)
 
-
-import matplotlib.pyplot as plt
-
-plt.plot(vqe.energy_history)
-plt.xlabel("Iteration")
-plt.ylabel("Energy (Hartree)")
-plt.title("FeMoco VQE Convergence")
-plt.show()
+vqe.visualize_energy(exact=False)

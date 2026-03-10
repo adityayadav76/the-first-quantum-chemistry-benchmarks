@@ -21,11 +21,9 @@ mol = gto.M(
 # ============================================================
 # Active Space
 # ============================================================
-
 vqe = electronic_structure_problem(
     mol,
-    freeze_core=True,
-    active_orbitals=14   # 14 orbitals → 28 qubits
+    active_orb=14       # 14 orbitals → 28 qubits
 )
 
 qv = QuantumVariable(28)
@@ -41,34 +39,26 @@ from AutomatskiKomencoQiskit import AutomatskiKomencoQiskit
 from AutomatskiBackendQrisp import *
 
 backend = AutomatskiKomencoQiskit(
-    host="XXX.XXX.XXX.XXX",
-    port=XX
+    host="xxx.xxx.xxx.xxx",
+    port=xx
 )
 
 automatski_backend = AutomatskiBackend(backend=backend)
 
 # ============================================================
-# ADAPT VQE
+# VQE
 # ============================================================
+vqe.set_callback()
 
 energy = vqe.run(
     qv,
-    ansatz="adapt",
+    depth=1,
     max_iter=150,
-    adapt_pool="uccsd",
-    gradient_threshold=1e-3,
     mes_kwargs={
-        "backend": automatski_backend,
+        "backend": automatski_backend
     }
 )
 
-print("ADAPT-VQE energy:", energy)
+print("VQE energy:", energy)
 
-
-import matplotlib.pyplot as plt
-
-plt.plot(vqe.energy_history)
-plt.xlabel("Iteration")
-plt.ylabel("Energy (Hartree)")
-plt.title("FeMoco VQE Convergence")
-plt.show()
+vqe.visualize_energy(exact=False)

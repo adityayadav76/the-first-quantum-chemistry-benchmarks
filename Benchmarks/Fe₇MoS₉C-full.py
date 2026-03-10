@@ -67,8 +67,8 @@ from AutomatskiKomencoQiskit import AutomatskiKomencoQiskit
 from AutomatskiBackendQrisp import *
 
 backend = AutomatskiKomencoQiskit(
-    host="XXX.XXX.XXX.XXX",
-    port=XX
+    host="xxx.xxx.xxx.xxx",
+    port=xx
 )
 
 automatski_backend = AutomatskiBackend(
@@ -87,6 +87,7 @@ print("Allocated qubits:", len(qv))
 ###############################################################
 # Run VQE
 ###############################################################
+vqe.set_callback()
 
 energy = vqe.run(
     qv,
@@ -100,10 +101,4 @@ energy = vqe.run(
 print("\nEstimated FeMoco Ground State Energy")
 print(energy)
 
-import matplotlib.pyplot as plt
-
-plt.plot(vqe.energy_history)
-plt.xlabel("Iteration")
-plt.ylabel("Energy (Hartree)")
-plt.title("FeMoco VQE Convergence")
-plt.show()
+vqe.visualize_energy(exact=False)

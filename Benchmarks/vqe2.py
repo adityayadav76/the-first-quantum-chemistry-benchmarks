@@ -36,12 +36,14 @@ sys.path.append('../../python/')
 from AutomatskiKomencoQiskit import AutomatskiKomencoQiskit
 
 backend = AutomatskiKomencoQiskit(
-    host="XXX.XXX.XXX.XXX",
-    port=XX
+    host="xxx.xxx.xxx.xxx",
+    port=xx
 )
 
 from AutomatskiBackendQrisp import *
 automatski_backend = AutomatskiBackend(backend = backend)
+
+vqe.set_callback()
 energy = vqe.run(QuantumVariable(4),
               depth = 1,
               max_iter = 50,
@@ -51,11 +53,4 @@ energy = vqe.run(QuantumVariable(4),
 print(energy)
 # Yields -1.864179046
 
-
-import matplotlib.pyplot as plt
-
-plt.plot(vqe.energy_history)
-plt.xlabel("Iteration")
-plt.ylabel("Energy (Hartree)")
-plt.title("FeMoco VQE Convergence")
-plt.show()
+vqe.visualize_energy(exact=False)
