@@ -1,4 +1,4 @@
-# The First Quantum Cryptography Benchmarks
+# The First Quantum Chemistry Benchmarks
 The First Quantum Chemistry Benchmarks ( Qrisp, ... )
 
 ![](https://automatski.com/wp-content/uploads/2025/05/Automatski-New-Logo.svg)
