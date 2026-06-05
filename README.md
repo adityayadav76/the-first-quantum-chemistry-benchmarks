@@ -57,8 +57,16 @@ python <program-name>.py
 
 # Automatski's Quantum Playground (**Free)
 
+[Microsoft Store](https://apps.microsoft.com/detail/9pnb2mvczxh4?hl=en-US&gl=IN)
+
 [Windows Installer](https://automatski-public-s3.s3.amazonaws.com/QuantumPlayground-1.0.0-Setup.exe)
 
 [Ubuntu/Debian Installer](https://automatski-public-s3.s3.amazonaws.com/automatski-quantum-playground_1.0.0_amd64.deb)
 
 [Mac M1-M5 Installer](https://automatski-public-s3.s3.amazonaws.com/automatski-quantum-playground_1.0.0_mac.dmg)
+
+# Curiosity - AI Coding Agent (**FREE)
+
+[Microsoft Store](https://apps.microsoft.com/detail/9pf2qb6zxksj?hl=en-US&gl=IN)
+
+[Windows Installer](https://automatski-public-s3.s3.amazonaws.com/CuriositySetup-0.1.0.exe)
